@@ -14,11 +14,12 @@ def searchAncestors(pivotPerson, targetPerson, family):
         if(searchAncestors(person,targetPerson,family)):
             return True
     return False
-
+def addAncestor(person, family, ancestors):
+    ancestors.append
 def commonAncestor(pivotPerson, targetPerson, family):
     ancestors=[]
     for person in family[pivotPerson][1]:
-        ancestors.append(person)
+        addAncestor(person)
 
 output = open("output.txt",w)
 with open(file_name) as f:
@@ -54,8 +55,8 @@ with open(file_name) as f:
                 output.write(pivotPerson+" and "+targetPerson+" are siblings.\n")
             elif(targetPerson[1][0] in pivotPerson[1] | targetPerson[1][1] in pivotPerson[1]): #do not need to check if not full siblings as that happens above
                 output.write(pivotPerson+" and "+targetPerson+" are half-siblings.\n")
-            elif(searchAncestors(pivotPerson,targetPerson,family))
+            elif(searchAncestors(pivotPerson,targetPerson,family)):
                 output.write(targetPerson+" is an ancestor of "+pivotPerson+".\n")
-            elif(searchAncestors(targetPerson,pivotPerson,family))
+            elif(searchAncestors(targetPerson,pivotPerson,family)):
                 output.write(pivotPerson+" is an ancestor of "+searchPerson+".\n")
-            elif(commonAncestor(targetPerson, pivotPerson, family))  #check if both have common ancestor
+            elif(commonAncestor(targetPerson, pivotPerson, family)):  #check if both have common ancestor
